@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <div>Project Hub</div>
+    <div>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/submit_project">Submit</a>
+        <a href="/view_projects">View</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Submit Your Project</h2>
+
+    <form action="/submit_project" method="POST" enctype="multipart/form-data">
+        
+        <input type="text" name="week" placeholder="Week (Ex: Week 1)" required>
+
+        <input type="text" name="title" placeholder="Project Title" required>
+
+        <textarea name="description" placeholder="Project Description" required></textarea>
+
+        <input type="file" name="file" required>
+
+        <button type="submit">Upload Project</button>
+    </form>
+</div>
+
+</body>
+</html>

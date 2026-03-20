@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Projects</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <div class="navbar">
+        <div>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/submit_project">Submit</a>
+        </div>
+        <a href="/logout">Logout</a>
+    </div>
+
+    <h2>Your Projects</h2>
+
+    {% for p in projects %}
+    <div class="card">
+        <h3>{{ p[1] }}</h3>
+        <p>{{ p[2] }}</p>
+        <a href="/uploads/{{ p[3] }}" target="_blank">View File</a>
+    </div>
+    {% endfor %}
+
+</div>
+
+</body>
+</html>
